@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"/>
+    <meta name="color-scheme" content="light dark"/>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <script type="module">
+        import { modalController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/index.esm.js';
+        window.modalController = modalController;
+    </script>
+    <link rel="stylesheet" href="css/index.css" />
+    <title>MyRecipes Pro_SS</title>
+  </head>
+  <body>
+    <ion-app>
+      <ion-tabs>
+        <ion-tab tab="home">
+          <ion-header>
+            <ion-toolbar class="new-colour">
+              <ion-title>
+                <ion-icon name="restaurant-outline"></ion-icon>
+                <ion-label>MyRecipes Pro_SS</ion-label>
+              </ion-title>
+              <ion-buttons slot="end">
+                <ion-button id="clearBtn">
+                  <ion-icon name="trash-outline" slot="start"></ion-icon>
+                  <ion-label>Clear</ion-label>
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+
+          <ion-content>
+            <div id="recipes" class="ion-padding"></div>
+          </ion-content>
+        </ion-tab>
+
+        <ion-tab tab="add">
+          <ion-header>
+            <ion-toolbar class="new-colour">
+              <ion-title>
+                <ion-icon name="restaurant-outline"></ion-icon>
+                <ion-label>MyRecipes Pro_SS</ion-label>
+              </ion-title>
+            </ion-toolbar>
+          </ion-header>
+
+          <ion-content>
+            <h2 class="ion-padding-start">New Recipe</h2>
+            <ion-list>
+              <ion-item>
+                <ion-label position="stacked">Recipe Name</ion-label>
+                <ion-input
+                  id="title"
+                  placeholder="Chicken Tikka Masala"
+                ></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="stacked">Ingredients</ion-label>
+                <ion-textarea
+                  rows="10"
+                  id="ingredients"
+                  placeholder="1 Onion
+2 Garlic
+Chicken Breast
+Cumin Seeds"
+                ></ion-textarea>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Recipe Type</ion-label>
+                <ion-select id="type" interface="popover" value="">
+                  <ion-select-option value="cafe-outline">Breakfast</ion-select-option>
+                  <ion-select-option value="nutrition-outline">Lunch</ion-select-option>
+                  <ion-select-option value="restaurant-outline">Dinner</ion-select-option>
+                  <ion-select-option value="ice-cream-outline">Dessert</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-button
+                id="saveButton"
+                class="new-fab-colour ion-padding"
+                expand="full"
+              >
+                <ion-icon name="save-outline" slot="start"></ion-icon>
+                <ion-label>Save Recipe</ion-label>
+              </ion-button>
+            </ion-list>
+          </ion-content>
+        </ion-tab>
+
+        <ion-tab tab="about">
+          <ion-header>
+            <ion-toolbar class="new-colour">
+              <ion-title>
+                <ion-icon name="restaurant-outline"></ion-icon>
+                <ion-label>MyRecipes Pro_SS</ion-label>
+              </ion-title>
+            </ion-toolbar>
+          </ion-header>
+
+          <ion-content>
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title><img src="icon/1x/icon.png">About</ion-card-title>
+                <ion-card-subtitle>Samuel Schembri</ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>
+                This app MyRecipes Pro_SS was made to save and 
+                display recipes the user inputs in the app.
+              </ion-card-content>
+            </ion-card>
+          </ion-content>
+        </ion-tab>
+
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="home" class="new-colour">
+            <ion-icon name="fast-food-outline"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="add" class="new-colour">
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <ion-label>Add</ion-label>
+          </ion-tab-button>
+          <ion-tab-button tab="about" class="new-colour">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            <ion-label>About</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-app>
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
